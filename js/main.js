@@ -76,15 +76,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- 3. MENÚ MÓVIL (HAMBURGUESA) ---
-    // (Este código puede permanecer)
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
 
-    if (burger && nav && navLinks.length > 0) { // Comprobar si existen
-        burger.addEventListener('click', () => {
-            nav.classList.toggle('nav-active');
+    if (burger && nav && navLinks.length > 0) {
+        // Función para cerrar el menú
+        const closeMenu = () => {
+            nav.classList.remove('nav-active');
+            burger.classList.remove('toggle');
+            navLinks.forEach(link => link.style.animation = '');
+        };
 
+        // Evento click en el botón hamburguesa
+        burger.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evitar que el click se propague
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+
+            // Animar los enlaces
             navLinks.forEach((link, index) => {
                 if (link.style.animation) {
                     link.style.animation = '';
@@ -92,17 +102,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
                 }
             });
-            burger.classList.toggle('toggle');
         });
 
+        // Cerrar menú al hacer click en un enlace
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (nav.classList.contains('nav-active')) {
-                    nav.classList.remove('nav-active');
-                    burger.classList.remove('toggle');
-                    navLinks.forEach(inLink => inLink.style.animation = '');
-                }
+                closeMenu();
             });
+        });
+
+        // Cerrar menú al hacer click fuera
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !burger.contains(e.target) && nav.classList.contains('nav-active')) {
+                closeMenu();
+            }
+        });
+
+        // Cerrar menú al cambiar el tamaño de la ventana
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && nav.classList.contains('nav-active')) {
+                closeMenu();
+            }
         });
     }
 
