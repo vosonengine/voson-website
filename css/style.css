@@ -1,0 +1,648 @@
+/* --- VARIABLES Y ESTILOS BASE --- */
+:root {
+    --primary-color: #00f2ff; /* Cian neón */
+    --secondary-color: #ffffff;
+    --background-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* --- NAVEGACIÓN --- */
+#main-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 1rem 5%;
+    background: rgba(10, 10, 10, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    color: var(--secondary-color);
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.4s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 2px;
+    background-color: var(--secondary-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+
+/* --- CONTENIDO PRINCIPAL --- */
+#main-content {
+    position: relative;
+    z-index: 10;
+    background-color: var(--background-color);
+}
+
+.content-section {
+    padding: 6rem 5%;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.text-block.large-text p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    color: var(--secondary-color);
+}
+
+.logos {
+    filter: grayscale(1) brightness(1.5);
+    opacity: 0.7;
+    font-weight: 700;
+}
+
+.client-logos {
+    margin-top: 3rem;
+    border-top: 1px solid #2a2a2a;
+    padding-top: 2rem;
+}
+.client-logos h4 {
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+.client-logos p {
+    font-weight: 700;
+    color: #888;
+    filter: brightness(1.2);
+}
+
+#final-cta {
+    background: #050505;
+    text-align: center;
+}
+.btn-cta {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    margin-top: 2rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 242, 255, 0.3);
+}
+
+/* --- EFECTO PARALLAX --- */
+.parallax {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* La magia del parallax */
+}
+
+/* --- GRIDS Y TARJETAS --- */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+}
+
+.experience-grid, .game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.experience-card, .game-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover, .game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
+}
+
+/* --- EFECTO TYPEWRITER --- */
+.typewriter {
+    display: inline-block;
+    border-right: 3px solid var(--primary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary-color); }
+}
+
+/* ESTILOS PÁGINA DE CONTACTO */
+.contact-page main {
+    padding-top: 10vh; /* Espacio para el header fijo */
+}
+.contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.contact-header h2 {
+    font-size: 3.5rem;
+}
+.contact-header p {
+    max-width: 700px;
+    margin: 1rem auto 0;
+}
+.contact-form { max-width: 800px; margin: 0 auto; }
+
+/* --- FORMULARIO DE CONTACTO --- */
+.cta-section {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+.checkbox-group, .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.checkbox-group label, .radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 400;
+}
+.checkbox-group input, .radio-group input {
+    margin-right: 0.5rem;
+    accent-color: var(--primary-color);
+}
+
+
+.btn-submit {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 242, 255, 0.3);
+}
+
+/* --- ANIMACIONES DE SCROLL --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 2rem 5%;
+    background-color: #050505;
+    color: #888;
+}
+.attribution {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 1rem;
+}
+.attribution a {
+    color: #888;
+    text-decoration: none;
+}
+.attribution a:hover {
+    color: var(--primary-color);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        background-color: var(--background-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: -1;
+    }
+    
+    .nav-links li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+        z-index: 1001;
+    }
+    
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    h2 { font-size: 2.5rem; }
+    #hero-text { font-size: 35vw; }
+}
+
+/* MODIFICADO: ESTILOS PARA LA NUEVA SECCIÓN HERO (TIPO GTA VI) */
+/* Asegúrate que el body permita overflow si la animación lo requiere luego */
+/* body {
+  overflow: hidden; /* Esto puede ser manejado por JS, como en el script de GTA 
+} */
+
+.gta-hero-container { /* Renombrado de .container para evitar colisiones */
+  min-height: 100svh;
+  position: relative;
+  background: linear-gradient(
+    223.17deg,
+    rgb(28, 24, 41) 0%,
+    rgb(27, 24, 40) 8.61%,
+    rgb(25, 23, 36) 17.21%,
+    rgb(22, 21, 32) 25.82%,
+    rgb(20, 19, 28) 34.42%,
+    rgb(18, 18, 24) 43.03%,
+    rgb(17, 17, 23) 51.63%
+  );
+  /* font-family: Arial, Helvetica, sans-serif; /* Puedes comentar esto si quieres que use Montserrat */
+}
+
+.gta-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 999; /* Asegúrate que esté por debajo de tu header si es necesario */
+  pointer-events: none;
+}
+
+.gta-hero-main-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  transform: scale(1.25);
+  /* MODIFICADO: Ajusta la ruta a tu logo o elimina si no tienes un logo de fondo similar */
+  background-image: url('../assets/images/gta-hero/logo_white.svg'); 
+  background-size: 300vh;
+  background-position: 50% 37.70%;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  padding-bottom: 200px;
+}
+
+.gta-hero-main-image {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+}
+
+.gta-hero-main-logo {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* Encima de la imagen principal, debajo del overlay inicial */
+  object-fit: cover;
+}
+
+.gta-hero-text-logo-container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
+  z-index: -1; /* Detrás del .gta-hero-main-container inicialmente */
+  object-fit: cover;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.gta-hero-text-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* MODIFICADO: Ajusta la ruta a tu logo morado o equivalente */
+  background-image: url('../assets/images/gta-hero/gta_logo_purple.webp');
+  background-repeat: no-repeat;
+  background-position: 50% 41.7%;
+  background-size: 28vh;
+  background-origin: content-box;
+  padding-bottom: 200px;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
+}
+
+.gta-scroll-indicator {
+  position: absolute;
+  bottom: 30px; /* Positioned at bottom of hero container */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 14px;
+  z-index: 10;
+}
+
+.gta-scroll-indicator svg {
+  color: #ffb0c4;
+  width: 100%;
+  height: 100%;
+}
+
+.gta-hero-text { /* Estilo para el h1 "VOSON" */
+  color: #ffb0c4;
+  text-align: center;
+  text-transform: uppercase;
+  background-image: radial-gradient(
+    circle at 50% 200vh,
+    rgba(255, 214, 135, 0) 0,
+    rgba(157, 47, 106, 0.5) 90vh,
+    rgba(157, 47, 106, 0.8) 120vh,
+    rgba(32, 31, 66, 0) 150vh
+  );
+  -webkit-text-fill-color: transparent;
+  font-size: 4.5rem; /* Ajusta según necesidad para "VOSON" */
+  font-weight: 900; /* Heredado de tu #hero-text, o ajústalo */
+  background-clip: text;
+  -webkit-background-clip: text; /* Para compatibilidad */
+  width: 100%;
+  line-height: 0.9;
+  margin-top: 55%; /* Ajustar si el logo morado tiene otra disposición */
+}
+
+.gta-hero-2-container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  object-fit: cover;
+  background-image: radial-gradient(
+    circle at 50% 200vh,
+    rgba(255, 214, 135, 0) 0,
+    rgba(157, 47, 106, 0.5) 90vh,
+    rgba(157, 47, 106, 0.8) 120vh,
+    rgba(32, 31, 66, 0) 150vh
+  );
+  -webkit-text-fill-color: transparent;
+  /* font-size: 6rem; /* Esto era para el texto original, ajusta para tu h3 y p */
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 0 2rem; /* mobile */
+  visibility: hidden;
+  color: #ffb0c4; /* Color base para el texto si el gradiente no se aplica directamente */
+}
+
+.gta-hero-2-container p {
+  max-width: 90%;
+  font-size: 1rem;
+  -webkit-text-fill-color: currentColor; /* Para que el texto sea visible */
+  color: #f0f0f0; /* Un color legible si el gradiente no funciona como esperado */
+  margin-bottom: 0; /* Anula el margin-bottom de tu p general si es necesario */
+}
+
+.gta-hero-2-container h3 {
+  font-size: 2.5rem;
+  -webkit-text-fill-color: currentColor; /* Para que el texto sea visible */
+  color: #ffb0c4; /* Un color legible */
+  margin-bottom: 0; /* Anula el margin-bottom de tu h3 general si es necesario */
+}
+
+@media (min-width: 1024px) {
+  .gta-hero-text {
+    font-size: 6rem; /* Ajusta según necesidad para "VOSON" en desktop */
+  }
+
+  .gta-scroll-indicator {
+    bottom: 30px;
+  }
+
+  .gta-hero-2-container {
+    margin: 0 auto;
+    max-width: 60%;
+    padding: 0;
+  }
+
+  .gta-hero-2-container p {
+    max-width: 90%;
+    font-size: 1.5rem; /* Ajustado para mejor lectura del párrafo */
+  }
+
+  .gta-hero-2-container h3 {
+    font-size: 3rem; /* Ajustado */
+  }
+}

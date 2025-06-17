@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta Tags para SEO y ASO -->
+    <title>Voson - Experiencias VR y Videojuegos Inmersivos</title>
+    <meta name="description" content="Voson es un estudio de videojuegos VR especializado en experiencias multijugador local y mundos inmersivos para museos, eventos e instituciones. Creamos recuerdos imborrables.">
+    <meta name="keywords" content="VR, Realidad Virtual, Videojuegos VR, Multijugador Local, Experiencias Inmersivas, Free Roam, Voson Engine, Museos Virtuales, Desarrollo de Videojuegos, España">
+    <meta name="author" content="Voson Studio">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://[TU-USUARIO].github.io/[TU-REPO]/">
+    <meta property="og:title" content="Voson - Experiencias VR que se recuerdan">
+    <meta property="og:description" content="Diseñamos experiencias VR de alto impacto y videojuegos cooperativos que no se olvidan. Descubre el poder de la inmersión con Voson.">
+    <meta property="og:image" content="https://[TU-USUARIO].github.io/[TU-REPO]/assets/images/hero-bg.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://[TU-USUARIO].github.io/[TU-REPO]/">
+    <meta property="twitter:title" content="Voson - Experiencias VR que se recuerdan">
+    <meta property="twitter:description" content="Diseñamos experiencias VR de alto impacto y videojuegos cooperativos que no se olvidan. Descubre el poder de la inmersión con Voson.">
+    <meta property="twitter:image" content="https://[TU-USUARIO].github.io/[TU-REPO]/assets/images/hero-bg.jpg">
+
+    <!-- Favicon (Ejemplo, reemplaza con el tuyo) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>V</text></svg>">
+
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Hoja de estilos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Script de JavaScript (diferido para mejor rendimiento) -->
+    <script src="js/main.js" defer></script>
+    <!-- Three.js (desde CDN para simplicidad en GitHub Pages) -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN SUPERIOR -->
+    <header id="main-header">
+        <nav>
+            <div class="nav-logo">
+                <a href="#">VOSON</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#voson-engine">Voson Engine</a></li>
+                <li><a href="#experiencias">Experiencias</a></li>
+                <li><a href="#videojuegos">Videojuegos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- MODIFICADO: SECCIÓN HERO REEMPLAZADA POR LA DE GTA VI -->
+        <div class="gta-hero-container"> <!-- Contenedor general para el hero de GTA, nombrado para evitar conflictos de 'container' -->
+        <div class="gta-overlay"></div>
+        <div class="gta-hero-1-container">
+            <div class="gta-hero-main-container">
+            <img
+                class="gta-hero-main-logo"
+                draggable="false"
+                src="assets/images/gta-hero/gta_logo_cut.png" <!-- AJUSTA ESTA RUTA / O REEMPLAZA IMAGEN -->
+                <!-- alt="Voson Outline Logo" -->
+            <!-- /> -->
+            <img
+                class="gta-hero-main-image"
+                draggable="false"
+                src="assets/images/gta-hero/gta_hero.jpg" <!-- USANDO TU IMAGEN DE FONDO ORIGINAL -->
+                <!-- alt="Voson Hero Background" -->
+            <!-- /> -->
+            </div>
+            <div class="gta-hero-text-logo-container">
+            <div class="gta-hero-text-logo"></div> <!-- Se usa gta_logo_purple.webp por CSS, puedes cambiarlo -->
+            <div>
+                <!-- TEXTO PRINCIPAL CAMBIADO A VOSON -->
+                <h1 class="gta-hero-text">
+                VOSON
+                </h1>
+            </div>
+            </div>
+        </div>
+        <div class="gta-hero-2-container">
+            <!-- TEXTO SECUNDARIO ADAPTADO PARA VOSON -->
+            <h3>Experiencias Inmersivas.</h3>
+            <p>
+            En Voson, creamos mundos virtuales que cautivan y conectan. 
+            Desde activaciones de marca hasta videojuegos cooperativos, 
+            transformamos ideas en realidades memorables. Descubre el poder de la inmersión.
+            </p>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="gta-scroll-indicator">
+            <svg
+            width="34"
+            height="14"
+            viewBox="0 0 34 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            class="_1smfa210" 
+            focusable="false"
+            >
+            <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M33.5609 1.54346C34.0381 2.5875 33.6881 3.87821 32.7791 4.42633L17.0387 13.9181L1.48663 4.42115C0.580153 3.86761 0.235986 2.57483 0.717909 1.53365C1.19983 0.492464 2.32535 0.097152 3.23182 0.650692L17.0497 9.08858L31.051 0.64551C31.96 0.0973872 33.0837 0.499411 33.5609 1.54346Z"
+                fill="currentColor"
+            ></path>
+            </svg>
+        </div>
+        </div>
+        <!-- FIN SECCIÓN HERO MODIFICADA -->
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div id="main-content">
+
+            <!-- SECCIÓN VOSON ENGINE -->
+            <section id="voson-engine" class="content-section">
+                <div class="container">
+                    <h2 class="animate-on-scroll">Haz que te recuerden.</h2>
+                    <p class="subtitle animate-on-scroll">Creamos experiencias que no te dejan indiferente.</p>
+                    
+                    <div class="text-block animate-on-scroll">
+                        <h3>En 2021</h3>
+                        <p>Un cliente nos llamó desesperado. Tenía un stand en una feria y lo que iba a ser “una activación potente” se le estaba quedando en una experiencia VR con unas fotos en 360º muy aburrida, muy simple.</p>
+                        <p>Nos pidió algo diferente. Algo que hiciera que la gente se parara. Creamos una experiencia VR de cinco minutos. Te ponías las gafas y te metías en una experiencia cooperativa con otras personas. Gente, muchas interacciones y muchas risas. Y cuando acababa, les dábamos un QR.</p>
+                        <p>Colas de 20 minutos. Fotos. Vídeos. Y lo más importante: leads. Tuvimos que comprar más gafas porque en aquella época ardían de tanto usarlas. 400 contactos reales. Y un comentario que lo resume todo:</p>
+                        <blockquote>“Esta ha sido la experiencia más original de toda la feria.”</blockquote>
+                        <p>Eso es lo que hacemos. Así nacimos. No hacemos vídeos bonitos. A nuestro cliente todavía le recuerdan esa experiencia que llevó. Eso es lo que hacemos. Experiencias que no terminan cuando se quitan las gafas. Experiencias que no se olvidan.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN PARALLAX 1 -->
+            <div class="parallax" style="background-image: url('assets/images/parallax-1.jpg');"></div>
+
+            <section class="content-section">
+                <div class="container grid-2">
+                    <div class="text-block animate-on-scroll">
+                        <h3>Free roam</h3>
+                        <p>Creamos entornos de realidad virtual donde tus visitantes pueden moverse con total libertad. Sin cables, sin menús fríos, sin sustos técnicos. Solo personas explorando mundos que no sabían que necesitaban.</p>
+                    </div>
+                    <div class="text-block animate-on-scroll">
+                        <h3>Experiencias de alto impacto</h3>
+                        <p>Diseñamos apps inmersivas pensadas para quedarse grabadas. Tecnología y narrativa se dan la mano para convertir tus valores, ideas o productos en algo que no se explica, que se vive.</p>
+                    </div>
+                </div>
+            </section>
+             <section class="content-section">
+                <div class="container">
+                    <div class="text-block large-text animate-on-scroll">
+                         <h3>Experiencias para...</h3>
+                         <p>Museos que quieren emocionar, instituciones que buscan conectar, fundaciones que saben que el conocimiento también se puede vivir. Creamos experiencias para quienes entienden que, en un mundo de distracciones constantes, solo impacta lo que se siente de verdad. Esto no va de tecnología, va de hacer que tu mensaje llegue… y se quede.</p>
+                    </div>
+                     <div class="text-block animate-on-scroll">
+                        <h3>Experiencias adaptables a cualquier entorno</h3>
+                        <p>Museo, hotel, feria, edificio histórico, auditorio, monasterio. Nos adaptamos al entorno sin comprometer la experiencia. ¿El truco? Tecnología flexible, narrativa inteligente y ganas de que todo salga bien.</p>
+                    </div>
+                    <div class="text-block animate-on-scroll">
+                        <h3>Videojuegos cooperativos</h3>
+                        <p>Contamos con videojuegos VR donde los usuarios colaboran, se divierten y se olvidan por completo de dónde están. Hoteles, campings, centros de ocio, centros comerciales. Fácil de montar, difícil de olvidar.</p>
+                    </div>
+                     <div class="text-block animate-on-scroll">
+                        <h3>Un equipo con más de 10 años de experiencia</h3>
+                        <p>Hemos apagado incendios en ferias, salvado cables de última hora y dejado a políticos con la boca abierta (literalmente).</p>
+                        <p class="subtitle">Nuestros mundos han viajado con:</p>
+                        <div class="logos">[PortAventura] [Fabrik] [Grupo Planeta] [Polo] [Tamarit] [Ballena] [Barceló] [ACCTIV] [Cotec] [Ayto. Málaga] [Artika Books] [Antena 3] …y los que vengan.</div>
+                    </div>
+                </div>
+             </section>
+
+            <!-- SECCIÓN EXPERIENCIAS -->
+            <section id="experiencias" class="content-section">
+                <div class="container">
+                    <h2 class="typewriter">Algunas de nuestras experiencias</h2>
+                    <p class="animate-on-scroll">¿Una demo? ¿Una instalación cultural? ¿Una feria que quiere ser algo más? Creamos experiencias VR para quienes no se conforman con contar las cosas: quieren que el público las viva. Galerías interactivas, espacios que hablan, instalaciones que se recuerdan. Desde arte y ciencia hasta salud o tecnología. Creamos para museos, instituciones, marcas o eventos… y lo hacemos a lo grande. ¿El truco? Narrativa que engancha, tecnología propia y una obsesión: que te recuerden.</p>
+                    
+                    <div class="experience-grid">
+                        <div class="experience-card animate-on-scroll"><h3>Goya</h3><p>Una galería inmersiva subvencionada por el Ministerio de Cultura. Hasta 20 personas recorren la vida y obra de Goya, desde su taller hasta sus etapas más oscuras.</p></div>
+                        <div class="experience-card animate-on-scroll"><h3>Frida Kahlo</h3><p>Diseñada para Artika Books, esta experiencia convierte su libro "Los sueños de Frida Kahlo" en una obra viva, como si entraras dentro del propio libro.</p></div>
+                        <div class="experience-card animate-on-scroll"><h3>Plaza del Obispo</h3><p>Convertimos esta emblemática plaza para el ayuntamiento de Málaga en un escenario virtual donde el patrimonio cobra vida.</p></div>
+                        <div class="experience-card animate-on-scroll"><h3>MetaPolo</h3><p>Una muestra de lo que la realidad virtual y el free roam pueden hacer cuando se quiere impresionar en una feria de eventos.</p></div>
+                        <div class="experience-card animate-on-scroll"><h3>Meditación VR</h3><p>Una experiencia de bienestar traducida a varios idiomas. Guiada, suave y profunda, para quien quiere un momento de pausa real.</p></div>
+                        <div class="experience-card animate-on-scroll"><h3>MetaCardio</h3><p>Diseñada para Daiichi Sankyo. Una experiencia educativa para explicar conceptos de cardiología de forma envolvente y clara.</p></div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN PARALLAX 2 -->
+            <div class="parallax" style="background-image: url('assets/images/parallax-2.jpg');"></div>
+
+            <!-- SECCIÓN VIDEOJUEGOS -->
+            <section id="videojuegos" class="content-section">
+                <div class="container">
+                    <h2 class="typewriter">Infinity Room: videojuegos que se viven de verdad</h2>
+                     <p class="animate-on-scroll">Infinity Room es nuestra tecnología propia: videojuegos cooperativos y competitivos donde los usuarios se mueven físicamente por todo el espacio, colaboran, compiten, se sorprenden… y repiten. ¿Hotel? ¿Camping? ¿Centro comercial? Funciona todo el año, engancha, y convierte tu espacio en un recuerdo inolvidable. ¿Y lo mejor? Que tan sólo te hacen falta 7 x 5 metros.</p>
+                     
+                     <div class="game-grid">
+                         <div class="game-card animate-on-scroll">
+                            <h3>Zombie Survival</h3>
+                            <p>Un escuadrón de hasta 6 personas, una iglesia abandonada y una misión que sale mal. Cooperación, tensión y adrenalina en estado puro.</p>
+                         </div>
+                         <div class="game-card animate-on-scroll">
+                            <h3>Crazy Kitchen</h3>
+                            <p>3 contra 3. Sartén en mano y nervios de acero. Solo un equipo puede dominar los fogones de esta cocina loca. Caos y risas garantizadas.</p>
+                         </div>
+                         <div class="game-card animate-on-scroll">
+                            <h3>ToyPark</h3>
+                            <p>Eres un juguete en un mundo de juguetes con malas intenciones. ¿Sales entero o te conviertes en decoración de plástico?</p>
+                         </div>
+                         <div class="game-card animate-on-scroll">
+                            <h3>Funcraft</h3>
+                            <p>Un taller de juguetes a punto de estallar. Ayuda a reconstruir piezas y pon orden en el caos. Trabajo en equipo y creatividad para 6 jugadores.</p>
+                         </div>
+                     </div>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN PARALLAX 3 -->
+            <div class="parallax" style="background-image: url('assets/images/parallax-3.jpg');"></div>
+
+            <!-- SECCIÓN CTA FINAL AÑADIDA -->
+            <section id="final-cta" class="content-section">
+                <div class="container text-center">
+                    <h2 class="animate-on-scroll">¿Te atreves a ser el evento del que todos hablan?</h2>
+                    <p class="animate-on-scroll">Escríbenos y hablemos. Aunque no sepas aún qué quieres, lo vamos a encontrar juntos.</p>
+                    <a href="contact.html" class="btn-cta animate-on-scroll">Encuéntralo aquí</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2024 Voson Studio. Todos los derechos reservados.</p>
+        <p class="attribution">Modelo 3D de "VR Headset" por <a href="https://sketchfab.com/Daan" target="_blank" rel="noopener">Daan</a>, licenciado bajo <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</p>
+    </footer>
+    
+    <!-- MODIFICADO: SCRIPTS DE GSAP Y NUEVO SCRIPT DE ANIMACIÓN DEL HERO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/gta-hero-animation.js" defer></script> <!-- Nuevo script para el hero -->
+
+</body>
+</html>

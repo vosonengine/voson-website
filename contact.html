@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Voson</title>
+    <meta name="description" content="Contacta con Voson para crear tu próxima experiencia VR inolvidable. Cuéntanos tu idea y empecemos a construirla juntos.">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>V</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="contact-page">
+
+    <header id="main-header">
+        <nav>
+            <div class="nav-logo"><a href="index.html">VOSON</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html#voson-engine">Voson Engine</a></li>
+                <li><a href="index.html#experiencias">Experiencias</a></li>
+                <li><a href="index.html#videojuegos">Videojuegos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contacto" class="content-section">
+            <div class="container">
+                <div class="contact-header">
+                    <h2>Hablemos.</h2>
+                    <p>Si has llegado hasta aquí, es porque no buscas “una experiencia más”. Este formulario no es corto, y no es casualidad. Nos tomamos en serio lo que hacemos, igual que tú. Cuéntanos tu idea y te daremos una propuesta que valga la pena.</p>
+                </div>
+
+                <!-- REEMPLAZA la URL de action con tu endpoint de Formspree -->
+                <form action="https://formspree.io/f/your_form_id" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre completo *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Empresa / Institución</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label>¿Qué tipo de experiencia te interesa?</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="experience_type" value="instalacion_fija"> Instalación fija</label>
+                            <label><input type="checkbox" name="experience_type" value="evento_puntual"> Evento puntual</label>
+                            <label><input type="checkbox" name="experience_type" value="videojuego_vr"> Videojuego VR</label>
+                            <label><input type="checkbox" name="experience_type" value="instalacion_cultural"> Instalación cultural o expositiva</label>
+                            <label><input type="checkbox" name="experience_type" value="otro"> Otro</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="project">Cuéntanos largo y tendido sobre tu proyecto o idea.</label>
+                        <textarea id="project" name="project" rows="6"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Cuál es tu presupuesto estimado?</label>
+                         <div class="radio-group">
+                            <label><input type="radio" name="budget" value="<20k"> Menos de 20.000 €</label>
+                            <label><input type="radio" name="budget" value="20k-40k"> Entre 20.000 € y 40.000 €</label>
+                            <label><input type="radio" name="budget" value="40k-60k"> Entre 40.000 € y 60.000 €</label>
+                            <label><input type="radio" name="budget" value=">60k"> Más de 60.000 €</label>
+                            <label><input type="radio" name="budget" value="no_claro"> No lo tengo claro aún</label>
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label>¿Para cuándo te gustaría tenerlo listo?</label>
+                         <div class="radio-group">
+                            <label><input type="radio" name="timeline" value="<1m"> En menos de 1 mes</label>
+                            <label><input type="radio" name="timeline" value="1-3m"> En 1-3 meses</label>
+                            <label><input type="radio" name="timeline" value="later"> Más adelante</label>
+                            <label><input type="radio" name="timeline" value="exploring"> Solo estoy explorando posibilidades</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="extra">¿Algo más que deberíamos saber?</label>
+                        <textarea id="extra" name="extra" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar propuesta</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Voson Studio. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script para el menú móvil -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+                burger.classList.toggle('toggle');
+            });
+        });
+    </script>
+</body>
+</html>
