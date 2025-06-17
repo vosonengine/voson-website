@@ -221,24 +221,102 @@ blockquote {
     gap: 4rem;
 }
 
-.experience-grid, .game-grid {
+.experience-grid, .services-grid, .game-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; /* Aumentado para más espacio */
+    margin-top: 2rem;
 }
 
-.experience-card, .game-card {
-    background: #1a1a1a;
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid #2a2a2a;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.experience-card, .service-item, .game-card {
+    background-color: #222; /* Ligeramente más oscuro */
+    padding: 1.5rem;
+    border-radius: 8px; /* Bordes más redondeados */
+    border: 1px solid #333; /* Borde sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Transición más suave */
+    display: flex; /* Para alinear contenido si es necesario */
+    flex-direction: column; /* Apilar contenido verticalmente */
 }
 
-.experience-card:hover, .game-card:hover {
+.experience-card:hover, .service-item:hover, .game-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3); /* Sombra más pronunciada y color cian */
+    border-color: var(--primary-color); /* Color del borde al pasar el ratón */
+}
+
+.experience-card h3, .service-item h3, .game-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.experience-card p, .service-item p, .game-card p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.experience-card-content, .service-item-content, .game-card-content {
+    flex-grow: 1; /* Asegura que el contenido llene la tarjeta */
+}
+
+/* Ajustes específicos para la nueva sección de servicios destacados */
+#servicios-destacados .section-header h2 {
+    font-size: 2.8rem; /* Un poco más grande para destacar */
+}
+
+#servicios-destacados .section-header .subtitle {
+    font-size: 1.3rem; /* Subtítulo un poco más grande */
+    color: #bbb; /* Color ligeramente más claro para el subtítulo */
+    max-width: 700px; /* Limitar ancho para mejor legibilidad */
+    margin: 0.5rem auto 2rem auto; /* Centrar y espaciar */
+}
+
+.services-grid .service-item.large-text {
+    grid-column: span 2; /* Hacer que este item ocupe dos columnas si es posible */
+}
+
+@media (max-width: 768px) {
+    .services-grid .service-item.large-text {
+        grid-column: span 1; /* En pantallas pequeñas, vuelve a una columna */
+    }
+}
+
+/* Estilos para la sección de videojuegos */
+#videojuegos .section-header h2 {
+    font-size: 2.8rem;
+}
+
+#videojuegos .section-header .subtitle {
+    font-size: 1.2rem;
+    color: #bbb;
+    max-width: 800px;
+    margin: 0.5rem auto 2rem auto;
+}
+
+.game-card {
+    text-align: center; /* Centrar contenido de las tarjetas de juego */
+}
+
+.game-card h3 {
+    font-size: 1.8rem; /* Títulos de juegos un poco más grandes */
+}
+
+/* Estilos para los encabezados de sección reutilizables */
+.section-header {
+    margin-bottom: 3rem; /* Más espacio después del encabezado */
+    text-align: center; /* Centrar el contenido del encabezado por defecto */
+}
+
+.section-header h2 {
+    font-size: 3rem; /* Título más grande */
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-header .subtitle {
+    font-size: 1.2rem; /* Subtítulo ligeramente más grande */
+    color: #bbb; /* Color más claro para el subtítulo */
+    max-width: 600px; /* Limitar el ancho para mejor legibilidad */
+    margin: 0 auto; /* Centrar el subtítulo */
 }
 
 /* --- EFECTO TYPEWRITER --- */
@@ -368,6 +446,28 @@ blockquote {
     transform: translateY(0);
 }
 
+/* --- LOGOS DE CLIENTES --- */
+.client-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.client-logos-grid img {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.client-logos-grid img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
 /* --- FOOTER --- */
 footer {
     text-align: center;
@@ -468,13 +568,13 @@ footer {
 }
 
 .gta-overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: black;
-  z-index: 999; /* Asegúrate que esté por debajo de tu header si es necesario */
+  z-index: 1; /* Solo cubre la sección hero */
   pointer-events: none;
 }
 
