@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
+    const header = document.getElementById('main-header');
 
     if (burger && nav && navLinks.length > 0) {
         // Función para cerrar el menú
@@ -86,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.remove('nav-active');
             burger.classList.remove('toggle');
             navLinks.forEach(link => link.style.animation = '');
+            // Restaurar el scroll
+            document.body.style.overflow = 'auto';
         };
 
         // Evento click en el botón hamburguesa
@@ -93,6 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation(); // Evitar que el click se propague
             nav.classList.toggle('nav-active');
             burger.classList.toggle('toggle');
+            
+            // Bloquear/desbloquear scroll cuando el menú está abierto
+            if (nav.classList.contains('nav-active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
 
             // Animar los enlaces
             navLinks.forEach((link, index) => {

@@ -16,7 +16,8 @@ if (isMobile) {
         height: "100%",
         position: "absolute",
         top: 0,
-        left: 0
+        left: 0,
+        transform: "scale(0.9)" // Reducir tamaño de la imagen
     });
 
     // Ajustar el contenedor del texto
@@ -29,25 +30,45 @@ if (isMobile) {
 
     // Ajustar el texto principal
     gsap.set(".gta-hero-text", {
-        fontSize: "2.5rem",
+        fontSize: "1.8rem", // Reducido para móviles
         textAlign: "center",
         width: "100%",
         margin: "0 auto"
     });
 
-    // Ajustar el contenedor secundario
+    // Ajustar el contenedor secundario para que sea visible
     gsap.set(".gta-hero-2-container", {
-        padding: "1.5rem",
+        padding: "1rem",
         height: "auto",
-        minHeight: "40vh",
+        minHeight: "30vh",
         position: "relative",
-        zIndex: 2
+        top: "40vh", // Posicionarlo debajo de la animación principal
+        zIndex: 10,
+        opacity: 1,
+        visibility: "visible",
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
+        width: "90%",
+        maxWidth: "500px",
+        margin: "1rem auto",
+        borderRadius: "8px"
+    });
+
+    // Asegurar que el texto sea visible
+    gsap.set(".gta-hero-2-container h3", {
+        color: "var(--primary-color)",
+        webkitTextFillColor: "var(--primary-color)"
+    });
+
+    gsap.set(".gta-hero-2-container p", {
+        color: "var(--text-color)",
+        webkitTextFillColor: "var(--text-color)"
     });
 
     // Ajustar el contenedor principal
     gsap.set(".gta-hero-main-container", {
         position: "relative",
-        overflow: "hidden"
+        overflow: "visible",
+        height: "40vh" // Reducido para móviles
     });
 }
 
@@ -188,12 +209,43 @@ tl.to(
 );
 
 tl.set(".gta-hero-1-container", { opacity: 0 });
-tl.set(".gta-hero-2-container", { visibility: "visible" });
 
-tl.to(".gta-hero-2-container", { 
-    opacity: 1, 
-    duration: isMobile ? 2 : 3 
-}, "<+=0.2");
+// Manejo diferente para móvil y desktop
+if (isMobile) {
+    // En móvil, simplemente aseguramos que el contenedor secundario sea visible
+    tl.set(".gta-hero-2-container", { 
+        visibility: "visible",
+        opacity: 1,
+        top: "40vh",
+        zIndex: 10,
+        backgroundColor: "rgba(0, 0, 0, 0.7)"
+    });
+    
+    // Asegurar que el texto sea visible con colores correctos
+    tl.set(".gta-hero-2-container h3", {
+        color: "var(--primary-color)",
+        webkitTextFillColor: "var(--primary-color)"
+    });
+    
+    tl.set(".gta-hero-2-container p", {
+        color: "var(--text-color)",
+        webkitTextFillColor: "var(--text-color)"
+    });
+    
+    // Ajustar el scroll para que el usuario pueda ver el contenido
+    tl.set(".gta-hero-container", {
+        overflow: "visible",
+        height: "auto",
+        minHeight: "100vh"
+    });
+} else {
+    // En desktop, seguimos con la animación original
+    tl.set(".gta-hero-2-container", { visibility: "visible" });
+    tl.to(".gta-hero-2-container", { 
+        opacity: 1, 
+        duration: 3 
+    }, "<+=0.2");
+}
 
 // Ajustar el tamaño del texto en móvil
 if (isMobile) {
