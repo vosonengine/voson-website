@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Meta Tags para SEO y ASO -->
     <title>Voson - Experiencias VR y Videojuegos Inmersivos</title>
     <meta name="description" content="Voson es un estudio de videojuegos VR especializado en experiencias multijugador local y mundos inmersivos para museos, eventos e instituciones. Creamos recuerdos imborrables.">
@@ -24,7 +24,7 @@
     <meta property="twitter:description" content="Diseñamos experiencias VR de alto impacto y videojuegos cooperativos que no se olvidan. Descubre el poder de la inmersión con Voson.">
     <meta property="twitter:image" content="https://[TU-USUARIO].github.io/[TU-REPO]/assets/images/hero-bg.jpg">
 
-    <!-- Favicon (Ejemplo, reemplaza con el tuyo) -->
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>V</text></svg>">
 
     <!-- Google Fonts: Montserrat -->
@@ -35,9 +35,10 @@
     <!-- Hoja de estilos CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Script de JavaScript (diferido para mejor rendimiento) -->
+    <!-- Script de JavaScript -->
     <script src="js/main.js" defer></script>
-    <!-- Three.js (desde CDN para simplicidad en GitHub Pages) -->
+    
+    <!-- Three.js -->
     <script type="importmap">
     {
         "imports": {
@@ -55,12 +56,12 @@
             <div class="nav-logo">
                 <a href="index.html">VOSON</a>
             </div>
-    <ul class="nav-links">
-        <li><a href="voson-engine.html">Voson Engine</a></li>
-        <li><a href="experiencias.html">Experiencias</a></li>
-        <li><a href="videojuegos.html">Videojuegos</a></li>
-        <li><a href="contact.html">Contacto</a></li>
-    </ul>
+            <ul class="nav-links">
+                <li><a href="index.html">Voson Engine</a></li>
+                <li><a href="experiencias.html">Experiencias</a></li>
+                <li><a href="videojuegos.html">Videojuegos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
             <div class="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -70,77 +71,120 @@
     </header>
 
     <main>
-        <!-- MODIFICADO: SECCIÓN HERO REEMPLAZADA POR LA DE GTA VI -->
-        <div class="gta-hero-container"> <!-- Contenedor general para el hero de GTA, nombrado para evitar conflictos de 'container' -->
-        <div class="gta-overlay"></div>
-        <div class="gta-hero-1-container">
-            <div class="gta-hero-main-container">
-            <img
-                class="gta-hero-main-logo"
-                draggable="false"
-                src="assets/images/gta-hero/gta_logo_cut.png" <!-- AJUSTA ESTA RUTA / O REEMPLAZA IMAGEN -->
-                <!-- alt="Voson Outline Logo" -->
-            <!-- /> -->
-            <img
-                class="gta-hero-main-image"
-                draggable="false"
-                src="assets/images/gta-hero/gta_hero.jpg" <!-- USANDO TU IMAGEN DE FONDO ORIGINAL -->
-                <!-- alt="Voson Hero Background" -->
-            <!-- /> -->
-            </div>
-            <div class="gta-hero-text-logo-container">
-            <div class="gta-hero-text-logo"></div> <!-- Se usa gta_logo_purple.webp por CSS, puedes cambiarlo -->
-            <div>
-                <!-- TEXTO PRINCIPAL CAMBIADO A VOSON -->
-                <h1 class="gta-hero-text">
-                VOSON
-                </h1>
-            </div>
-            </div>
-        </div>
-        <div class="gta-hero-2-container">
-            <!-- TEXTO SECUNDARIO ADAPTADO PARA VOSON -->
-            <h3>Experiencias Inmersivas.</h3>
-            <p>
-            En Voson, creamos mundos virtuales que cautivan y conectan. 
-            Desde activaciones de marca hasta videojuegos cooperativos, 
-            transformamos ideas en realidades memorables. Descubre el poder de la inmersión.
-            </p>
-        </div>
-        <!-- Scroll Indicator -->
-        <div class="gta-scroll-indicator">
-            <svg
-            width="34"
-            height="14"
-            viewBox="0 0 34 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            class="_1smfa210" 
-            focusable="false"
-            >
-            <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M33.5609 1.54346C34.0381 2.5875 33.6881 3.87821 32.7791 4.42633L17.0387 13.9181L1.48663 4.42115C0.580153 3.86761 0.235986 2.57483 0.717909 1.53365C1.19983 0.492464 2.32535 0.097152 3.23182 0.650692L17.0497 9.08858L31.051 0.64551C31.96 0.0973872 33.0837 0.499411 33.5609 1.54346Z"
-                fill="currentColor"
-            ></path>
-            </svg>
-        </div>
-        </div>
-        <!-- FIN SECCIÓN HERO MODIFICADA -->
-
-        <!-- CONTENIDO PRINCIPAL -->
-        <div id="main-content">
-            <!-- SECCIÓN CTA FINAL -->
-            <section id="final-cta" class="content-section">
-                <div class="container text-center">
-                    <h2 class="animate-on-scroll">¿Te atreves a ser el evento del que todos hablan?</h2>
-                    <p class="animate-on-scroll">Escríbenos y hablemos. Aunque no sepas aún qué quieres, lo vamos a encontrar juntos.</p>
-                    <a href="contact.html" class="btn-cta animate-on-scroll">Encuéntralo aquí</a>
+        <!-- HERO SECTION -->
+        <div class="gta-hero-container">
+            <div class="gta-overlay"></div>
+            <div class="gta-hero-1-container">
+                <div class="gta-hero-main-container">
+                    <img class="gta-hero-main-logo-bg" src="assets/images/gta-hero/gta_logo_bg.png">
+                    <img class="gta-hero-main-logo" src="assets/images/gta-hero/gta_logo_cut.png">
+                    <img class="gta-hero-main-image" src="assets/images/gta-hero/gta_hero.jpg">
                 </div>
-            </section>
+                <div class="gta-hero-text-logo-container">
+                    <div class="gta-hero-text-logo"></div>
+                    <h1 class="gta-hero-text">VOSON</h1>
+                </div>
+            </div>
+            <div class="gta-hero-2-container">
+                <h3>Experiencias Inmersivas.</h3>
+                <p>
+                    En Voson, creamos mundos virtuales que cautivan y conectan. 
+                    Desde activaciones de marca hasta videojuegos cooperativos, 
+                    transformamos ideas en realidades memorables. Descubre el poder de la inmersión.
+                </p>
+            </div>
+            <div class="gta-scroll-indicator">
+                <svg width="34" height="14" viewBox="0 0 34 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="_1smfa210" focusable="false">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M33.5609 1.54346C34.0381 2.5875 33.6881 3.87821 32.7791 4.42633L17.0387 13.9181L1.48663 4.42115C0.580153 3.86761 0.235986 2.57483 0.717909 1.53365C1.19983 0.492464 2.32535 0.097152 3.23182 0.650692L17.0497 9.08858L31.051 0.64551C31.96 0.0973872 33.0837 0.499411 33.5609 1.54346Z" fill="currentColor"></path>
+                </svg>
+            </div>
         </div>
+
+        <!-- VOSON ENGINE CONTENT -->
+        <section id="voson-engine" class="content-section">
+            <div class="container">
+                <h2 class="animate-on-scroll">Haz que te recuerden.</h2>
+                <p class="subtitle animate-on-scroll">Creamos experiencias que no te dejan indiferente.</p>
+                
+                <div class="text-block animate-on-scroll">
+                    <h3>En 2021</h3>
+                    <p>Un cliente nos llamó desesperado. Tenía un stand en una feria y lo que iba a ser “una activación potente” se le estaba quedando en una experiencia VR con unas fotos en 360º muy aburrida, muy simple.</p>
+                    <p>Nos pidió algo diferente. Algo que hiciera que la gente se parara. Creamos una experiencia VR de cinco minutos. Te ponías las gafas y te metías en una experiencia cooperativa con otras personas. Gente, muchas interacciones y muchas risas. Y cuando acababa, les dábamos un QR.</p>
+                    <p>Colas de 20 minutos. Fotos. Vídeos. Y lo más importante: leads. Tuvimos que comprar más gafas porque en aquella época ardían de tanto usarlas. 400 contactos reales. Y un comentario que lo resume todo:</p>
+                    <blockquote>“Esta ha sido la experiencia más original de toda la feria.”</blockquote>
+                    <p>Eso es lo que hacemos. Así nacimos. No hacemos vídeos bonitos. A nuestro cliente todavía le recuerdan esa experiencia que llevó. Eso es lo que hacemos. Experiencias que no terminan cuando se quitan las gafas. Experiencias que no se olvidan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARALLAX SECTION -->
+        <div class="parallax" style="background-image: url('assets/images/gta-hero/parallax-1.jpg');"></div>
+
+        <!-- SERVICES SECTION -->
+        <section id="servicios-destacados" class="content-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Nuestros Servicios Estrella</h2>
+                    <p class="subtitle">Creamos soluciones VR a medida que transforman ideas en realidades impactantes.</p>
+                </div>
+                <div class="grid-2 services-grid">
+                    <div class="service-item animate-on-scroll">
+                        <h3>Free roam</h3>
+                        <p>Creamos entornos de realidad virtual donde tus visitantes pueden moverse con total libertad. Sin cables, sin menús fríos, sin sustos técnicos. Solo personas explorando mundos que no sabían que necesitaban.</p>
+                    </div>
+                    <div class="service-item animate-on-scroll">
+                        <h3>Experiencias de alto impacto</h3>
+                        <p>Diseñamos apps inmersivas pensadas para quedarse grabadas. Tecnología y narrativa se dan la mano para convertir tus valores, ideas o productos en algo que no se explica, que se vive.</p>
+                    </div>
+                    <div class="service-item animate-on-scroll large-text">
+                        <h3>Experiencias para...</h3>
+                        <p>Museos que quieren emocionar, instituciones que buscan conectar, fundaciones que saben que el conocimiento también se puede vivir. Creamos experiencias para quienes entienden que, en un mundo de distracciones constantes, solo impacta lo que se siente de verdad. Esto no va de tecnología, va de hacer que tu mensaje llegue… y se quede.</p>
+                    </div>
+                    <div class="service-item animate-on-scroll">
+                        <h3>Experiencias adaptables a cualquier entorno</h3>
+                        <p>Museo, hotel, feria, edificio histórico, auditorio, monasterio. Nos adaptamos al entorno sin comprometer la experiencia. ¿El truco? Tecnología flexible, narrativa inteligente y ganas de que todo salga bien.</p>
+                    </div>
+                    <div class="service-item animate-on-scroll">
+                        <h3>Videojuegos cooperativos</h3>
+                        <p>Contamos con videojuegos VR donde los usuarios colaboran, se divierten y se olvidan por completo de dónde están. Hoteles, campings, centros de ocio, centros comerciales. Fácil de montar, difícil de olvidar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM EXPERIENCE SECTION -->
+        <section class="content-section">
+            <div class="container">
+                <div class="text-block animate-on-scroll">
+                    <h3>Un equipo con más de 10 años de experiencia</h3>
+                    <p>Hemos apagado incendios en ferias, salvado cables de última hora y dejado a políticos con la boca abierta (literalmente).</p>
+                    <p class="subtitle">Nuestros mundos han viajado con:</p>
+                    <div class="client-logos-grid">
+                        <img src="assets/images/logos/portaventura.png" alt="PortAventura">
+                        <img src="assets/images/logos/fabrik.png" alt="Fabrik">
+                        <img src="assets/images/logos/grupo-planeta.png" alt="Grupo Planeta">
+                        <img src="assets/images/logos/polo.png" alt="Polo">
+                        <img src="assets/images/logos/tamarit.png" alt="Tamarit">
+                        <img src="assets/images/logos/ballena.png" alt="Ballena">
+                        <img src="assets/images/logos/barcelo.png" alt="Barceló">
+                        <img src="assets/images/logos/acctiv.png" alt="ACCTIV">
+                        <img src="assets/images/logos/cotec.png" alt="Cotec">
+                        <img src="assets/images/logos/ayto-malaga.png" alt="Ayto. Málaga">
+                        <img src="assets/images/logos/artika-books.png" alt="Artika Books">
+                        <img src="assets/images/logos/antena3.png" alt="Antena 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section id="final-cta" class="content-section">
+            <div class="container text-center">
+                <h2 class="animate-on-scroll">¿Te atreves a ser el evento del que todos hablan?</h2>
+                <p class="animate-on-scroll">Escríbenos y hablemos. Aunque no sepas aún qué quieres, lo vamos a encontrar juntos.</p>
+                <a href="contact.html" class="btn-cta animate-on-scroll">Encuéntralo aquí</a>
+            </div>
+        </section>
     </main>
     
     <footer>
@@ -148,10 +192,9 @@
         <p class="attribution">Modelo 3D de "VR Headset" por <a href="https://sketchfab.com/Daan" target="_blank" rel="noopener">Daan</a>, licenciado bajo <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</p>
     </footer>
     
-    <!-- MODIFICADO: SCRIPTS DE GSAP Y NUEVO SCRIPT DE ANIMACIÓN DEL HERO -->
+    <!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/gta-hero-animation.js" defer></script> <!-- Nuevo script para el hero -->
-
+    <script src="js/gta-hero-animation.js" defer></script>
 </body>
 </html>
