@@ -231,5 +231,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/gta-hero-animation.js" defer></script>
     <script src="js/experiencias-anim.js"></script>
+    <script>
+        document.addEventListener('scroll', function() {
+            const indicator = document.querySelector('.scroll-indicator');
+            const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+            if (indicator) {
+                indicator.style.display = nearBottom ? 'none' : 'block';
+            }
+        });
+        </script>
 </body>
 </html>

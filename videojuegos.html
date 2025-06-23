@@ -59,7 +59,7 @@
     <main>
         <!-- INTRO VIDEOJUEGOS -->
         <section class="content-section">
-            <div class="container" style="margin-top: 50px;">
+            <div class="container" style="margin-top: 50px">
                 <h2 class="animate-on-scroll">Infinity Room:</h2>
                 <div class="text-block animate-on-scroll">
                     <h3>Videojuegos que se viven de verdad</h3>
@@ -75,7 +75,6 @@
                 </div>
             </div>
         </section>
-
         <div class="scroll-indicator" style="position: fixed; left: 50%; transform: translateX(-50%); bottom: 32px; z-index: 100;">
             <svg width="34" height="14" viewBox="0 0 34 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M33.5609 1.54346C34.0381 2.5875 33.6881 3.87821 32.7791 4.42633L17.0387 13.9181L1.48663 4.42115C0.580153 3.86761 0.235986 2.57483 0.717909 1.53365C1.19983 0.492464 2.32535 0.097152 3.23182 0.650692L17.0497 9.08858L31.051 0.64551C31.96 0.0973872 33.0837 0.499411 33.5609 1.54346Z" fill="currentColor"></path>
@@ -85,9 +84,9 @@
         <section class="animated-section">
             <div class="sticky-container">
                 <div class="image-wrapper">
-                    <img src="assets/images/gta-hero/parallax-1.jpg" alt="Zombie Survival">
+                    <img src="assets/images/videogames/ZombieSurvival.png" alt="Zombie Survival">
                 </div>
-                <div class="text-content">
+                <div class="text-content overlay-bg">
                     <h1 class="reveal-text">Zombie Survival</h1>
                     <p class="reveal-text">Un escuadrón de hasta 6 personas, una iglesia abandonada y una misión que sale mal. Cooperación, tensión y adrenalina en estado puro.</p>
                 </div>
@@ -96,9 +95,9 @@
         <section class="animated-section">
             <div class="sticky-container">
                 <div class="image-wrapper">
-                    <img src="assets/images/gta-hero/parallax-2.jpg" alt="Crazy Kitchen">
+                    <img src="assets/images/videogames/CrazyKitchen.png" alt="Crazy Kitchen">
                 </div>
-                <div class="text-content">
+                <div class="text-content overlay-bg">
                     <h1 class="reveal-text">Crazy Kitchen</h1>
                     <p class="reveal-text">3 contra 3. Sartén en mano y nervios de acero. Solo un equipo puede dominar los fogones de esta cocina loca. Caos y risas garantizadas.</p>
                 </div>
@@ -107,9 +106,9 @@
         <section class="animated-section">
             <div class="sticky-container">
                 <div class="image-wrapper">
-                    <img src="assets/images/gta-hero/parallax-3.jpg" alt="ToyPark">
+                    <img src="assets/images/videogames/ToyPark.png" alt="ToyPark">
                 </div>
-                <div class="text-content">
+                <div class="text-content overlay-bg">
                     <h1 class="reveal-text">ToyPark</h1>
                     <p class="reveal-text">Eres un juguete en un mundo de juguetes con malas intenciones. ¿Sales entero o te conviertes en decoración de plástico?</p>
                 </div>
@@ -118,9 +117,9 @@
         <section class="animated-section">
             <div class="sticky-container">
                 <div class="image-wrapper">
-                    <img src="assets/images/gta-hero/parallax-4.jpg" alt="Funcraft">
+                    <img src="assets/images/videogames/FunCraft.png" alt="Funcraft">
                 </div>
-                <div class="text-content">
+                <div class="text-content overlay-bg">
                     <h1 class="reveal-text">Funcraft</h1>
                     <p class="reveal-text">Un taller de juguetes a punto de estallar. Ayuda a reconstruir piezas y pon orden en el caos. Trabajo en equipo y creatividad para 6 jugadores.</p>
                 </div>
@@ -137,5 +136,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/experiencias-anim.js"></script>
+    <script>
+    document.addEventListener('scroll', function() {
+        const indicator = document.querySelector('.scroll-indicator');
+        const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+        if (indicator) {
+            indicator.style.display = nearBottom ? 'none' : 'block';
+        }
+    });
+    </script>
 </body>
 </html>

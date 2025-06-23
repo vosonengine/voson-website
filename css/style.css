@@ -1363,3 +1363,15 @@ p.reveal-text {
     40% {transform: translateY(-10px);}
     60% {transform: translateY(-5px);}
 }
+
+.overlay-bg {
+    background: rgba(0, 0, 0, 0.45);
+    padding: 24px;
+    border-radius: 16px;
+    color: #fff;
+}
+
+.text-content h1,
+.text-content p {
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
