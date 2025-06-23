@@ -49,12 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
             element.style.setProperty('--image-opacity', imageFadeInProgress);
             element.style.setProperty('--image-scale', 0.9 + 0.1 * imageFadeInProgress);
             element.style.setProperty('--image-y', `${(1 - imageFadeInProgress) * 10}vh`);
-            // Fase 5 y 6: Fade out de la imagen y espacio en negro (de 90% a 100%)
-            // La sección tiene 325vh. El final (25vh) es para el fade-out.
-            // 300/325 = ~0.92
-            const imageFadeOutProgress = mapRange(progress, 0.92, 1.0, 1, 0);
-            if (progress > 0.92) {
+            // Fase 5 y 6: Fade out de la imagen y espacio en negro (de 88% a 100%)
+            // Ahora el fade out empieza antes y la imagen sube más durante el fade out
+            const fadeOutStart = 0.88;
+            const fadeOutEnd = 1.0;
+            const imageFadeOutProgress = mapRange(progress, fadeOutStart, fadeOutEnd, 1, 0);
+            if (progress > fadeOutStart) {
                 element.style.setProperty('--image-opacity', imageFadeOutProgress);
+                // La imagen sube hacia arriba durante el fade out (valor negativo para subir)
+                const extraY = mapRange(progress, fadeOutStart, fadeOutEnd, 0, -20); // sube hasta -20vh extra
+                element.style.setProperty('--image-y', `${(1 - imageFadeInProgress) * 10 + extraY}vh`);
             }
         });
     }
