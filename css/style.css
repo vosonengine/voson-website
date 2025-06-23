@@ -670,13 +670,11 @@ footer {
     #final-cta h2 {
         font-size: 1.8rem;
         margin-bottom: 1rem;
-        padding: 0 1rem;
     }
 
     #final-cta p {
         font-size: 1rem;
         margin-bottom: 1.5rem;
-        padding: 0 1rem;
     }
 
     .btn-cta {
@@ -1268,7 +1266,10 @@ footer {
     object-fit: cover;
 }
 .text-content {
-    position: relative;
+    position: absolute;
+    top: 66vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
     text-align: center;
     max-width: 700px;
@@ -1374,4 +1375,12 @@ p.reveal-text {
 .text-content h1,
 .text-content p {
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+@media (max-width: 768px) {
+    .text-content {
+        top: 60vh;
+        padding: 1rem;
+        max-width: 95vw;
+    }
 }
