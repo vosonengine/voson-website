@@ -1384,3 +1384,52 @@ p.reveal-text {
         max-width: 95vw;
     }
 }
+
+/* INTRO VIDEOJUEGOS REDISEÑADO */
+.intro-vj.full-viewport {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #fff;
+  padding: 0 2vw;
+}
+.intro-vj .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.main-title {
+  font-size: 4vw;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  letter-spacing: -2px;
+}
+.highlight {
+  background: linear-gradient(90deg, #a259ff, #f72585);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.text-block h3 {
+  font-size: 2vw;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+}
+.text-block p {
+  font-size: 1.3vw;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+@media (max-width: 900px) {
+  .main-title { font-size: 7vw; }
+  .text-block h3 { font-size: 4vw; }
+  .text-block p { font-size: 2.5vw; }
+}
+@media (max-width: 600px) {
+  .main-title { font-size: 9vw; }
+  .text-block h3 { font-size: 6vw; }
+  .text-block p { font-size: 4vw; }
+}
