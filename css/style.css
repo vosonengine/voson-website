@@ -1433,3 +1433,52 @@ p.reveal-text {
   .text-block h3 { font-size: 6vw; }
   .text-block p { font-size: 4vw; }
 }
+
+@media (max-width: 600px) {
+  .animated-section {
+    height: 180vh; /* Más alto para animación más lenta */
+  }
+  .sticky-container {
+    height: 100vh;
+  }
+  .image-wrapper img {
+    min-height: 300px;
+    max-height: 120vh;
+    object-fit: cover;
+    object-position: center 60%; /* Centrar y bajar la imagen */
+    width: 110vw; /* Ampliar un poco la imagen */
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+  }
+  .text-content {
+    top: 55vh; /* Bajar el bloque de texto al tercio inferior */
+    padding: 1rem 0.5rem;
+    transform: translate(-50%, -10%);
+  }
+  .overlay-bg {
+    padding: 12px 8px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.65);
+    max-width: 95vw;
+    margin: 0 auto;
+  }
+  .text-content h1.reveal-text {
+    font-size: 1.5rem;
+  }
+  .text-content p.reveal-text {
+    font-size: 0.9rem;
+  }
+  .image-wrapper img.mobile-top {
+    object-position: top center;
+  }
+  .image-wrapper img.mobile-bottom {
+    object-position: bottom center;
+  }
+  .image-wrapper img.mobile-left {
+    object-position: center left;
+  }
+  .image-wrapper img.mobile-right {
+    object-position: center right;
+  }
+}
