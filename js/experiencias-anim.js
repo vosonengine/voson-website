@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 span.style.opacity = index < revealedChars ? '1' : '0.2';
             });
             // Fase 3 y 4: Aparición de la imagen (de 30% a 60% del scroll)
-            const imageFadeInProgress = mapRange(progress, 0.3, 0.6, 0, 1);
+            const imageFadeInProgress = mapRange(progress, 0.0, 0.6, 0, 1);
             element.style.setProperty('--image-opacity', imageFadeInProgress);
             element.style.setProperty('--image-scale', 0.9 + 0.1 * imageFadeInProgress);
             element.style.setProperty('--image-y', `${(1 - imageFadeInProgress) * 10}vh`);

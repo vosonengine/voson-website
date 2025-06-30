@@ -54,6 +54,14 @@ nav {
     letter-spacing: 2px;
 }
 
+.nav-logo-img {
+    height: 2.2rem; /* Ajusta este valor para que el logo tenga tamaño similar al texto */
+    width: auto;
+    display: block;
+    max-width: 140px; /* Evita que crezca demasiado en pantallas grandes */
+    margin: 0 auto;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -1407,7 +1415,7 @@ p.reveal-text {
   letter-spacing: -2px;
 }
 .highlight {
-  background: linear-gradient(90deg, #a259ff, #f72585);
+  background: linear-gradient(90deg, #D1743E, #ff5e00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1452,7 +1460,7 @@ p.reveal-text {
     position: relative;
   }
   .text-content {
-    top: 55vh; /* Bajar el bloque de texto al tercio inferior */
+    top: 45vh; /* Bajar el bloque de texto al tercio inferior */
     padding: 1rem 0.5rem;
     transform: translate(-50%, -10%);
   }
