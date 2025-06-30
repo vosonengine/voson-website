@@ -1,6 +1,6 @@
 /* --- VARIABLES Y ESTILOS BASE --- */
 :root {
-    --primary-color: #00f2ff; /* Cian neón */
+    --primary-color: #ff5e00; /* Cian neón */
     --secondary-color: #ffffff;
     --background-color: #0a0a0a;
     --text-color: #e0e0e0;
@@ -1328,7 +1328,7 @@ p.reveal-text {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1.1rem;
-    color: #00fff7;
+    color: #ff5e00;
     opacity: 0.95;
     text-align: left;
 }
@@ -1341,7 +1341,7 @@ p.reveal-text {
     max-width: 100%;
 }
 .intro-experiencias p.truco {
-    color: #00fff7;
+    color: #ff5e00;
     font-weight: 700;
     margin-top: 1.2rem;
     margin-bottom: 0;
@@ -1354,7 +1354,7 @@ p.reveal-text {
     animation: bounce 2s infinite;
 }
 .scroll-indicator svg {
-    color: #00fff7;
+    color: #ff5e00;
     width: 34px;
     height: 14px;
 }
