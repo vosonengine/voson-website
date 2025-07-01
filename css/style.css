@@ -1,6 +1,6 @@
 /* --- VARIABLES Y ESTILOS BASE --- */
 :root {
-    --primary-color: #ff5e00; /* Cian neón */
+    --primary-color: #ff5e00; 
     --secondary-color: #ffffff;
     --background-color: #0a0a0a;
     --text-color: #e0e0e0;
@@ -1531,4 +1531,21 @@ p.reveal-text {
   color: #aaa;
   margin-top: 18px;
   font-style: italic;
+}
+
+.lang-switcher a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.lang-switcher a:hover {
+    color: var(--primary-color);
+}
+
+.lang-switcher a.active {
+    color: var(--primary-color);
 }
