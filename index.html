@@ -192,8 +192,6 @@
             <div class="client-logos-grid">
                 <!-- Logos de clientes -->
                 <img src="assets/images/logos/Portaventura.png" alt="PortAventura">
-                
-                
                 <img src="assets/images/logos/LogoPolo.png" alt="Polo">
                 <!-- <img src="assets/images/logos/tamarit.png" alt="Tamarit"> -->
                 <img src="assets/images/logos/laballena-allegra.png" alt="Ballena">
@@ -270,6 +268,14 @@
             start: "bottom bottom",
             onEnter: () => document.querySelector('.scroll-indicator').style.display = 'none',
             onLeaveBack: () => document.querySelector('.scroll-indicator').style.display = 'block'
+        });
+
+        document.addEventListener('scroll', function() {
+            const indicator = document.querySelector('.scroll-indicator');
+            const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+            if (indicator) {
+                indicator.style.display = nearBottom ? 'none' : 'block';
+            }
         });
         </script>
 </body>
