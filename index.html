@@ -78,7 +78,7 @@
     <main>
         <!-- INTRO SECTION -->
         <section id="intro-section" style="position: relative; width: 100vw; height: 100vh; overflow: hidden; background: #000;">
-            <img id="intro-bg" src="assets/images/intro.jpg" alt="Intro Voson" style="position: absolute; width: 100vw; height: 100vh; object-fit: cover; top: 0; left: 0; z-index: 1; opacity: 1; transition: none;">
+            <iframe src="https://player.vimeo.com/video/905125026?autoplay=1&loop=1&muted=1&background=1" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; z-index: 1; border: none; clip-path: inset(80px 0px 80px 0px);" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             <!-- <img id="intro-logo" src="assets/images/logo.png" alt="Logo Voson" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 160vw; width: 1920px; min-width: 160px; z-index: 2; opacity: 0; transition: opacity 2.5s cubic-bezier(0.4,0,0.2,1); will-change: transform, opacity;"> -->
             <div class="scroll-indicator" style="position: fixed; left: 50%; transform: translateX(-50%); bottom: 32px; z-index: 10;">
                 <svg width="34" height="14" viewBox="0 0 34 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -229,38 +229,8 @@
     <script src="js/gta-hero-animation.js" defer></script>
     <script src="js/experiencias-anim.js"></script>
     <script>
-        // Animación de fade-in solo para el logo
-        window.addEventListener('DOMContentLoaded', function() {
-            const logo = document.getElementById('intro-logo');
-            setTimeout(() => {
-                logo.style.opacity = 1;
-            }, 200);
-        });
-
         // Parallax al hacer scroll con GSAP
         gsap.registerPlugin(ScrollTrigger);
-
-        gsap.to("#intro-bg", {
-            scrollTrigger: {
-                trigger: "#intro-section",
-                start: "top top",
-                end: "bottom top",
-                scrub: 1.5
-            },
-            y: -200,
-            ease: "power1.inOut"
-        });
-
-        gsap.to("#intro-logo", {
-            scrollTrigger: {
-                trigger: "#intro-section",
-                start: "top top",
-                end: "bottom top",
-                scrub: 1.5
-            },
-            y: -400,
-            ease: "power1.inOut"
-        });
 
         // Ocultar scroll-indicator al llegar abajo
         ScrollTrigger.create({
