@@ -58,7 +58,9 @@
                     <p>Si has llegado hasta aquí, es porque no buscas “una experiencia más”. Este formulario no es corto, y no es casualidad. Nos tomamos en serio lo que hacemos, igual que tú. Cuéntanos tu idea y te daremos una propuesta que valga la pena.</p>
                 </div>
 
-                <form class="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <input type="hidden" name="access_key" value="7f8f37c8-feed-4f5c-ad86-6adbdf31f6de">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     <div class="form-group">
                         <label for="name">Nombre completo *</label>
                         <input type="text" id="name" name="name" required>
@@ -110,6 +112,7 @@
                     </div>
                     <button type="submit" class="btn-submit">Enviar propuesta</button>
                 </form>
+                <div id="form-feedback"></div>
             </div>
         </section>
     </main>
@@ -118,7 +121,57 @@
         <p>© 2024 Voson Studio. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="js/form-handler.js"></script>
+    <script>
+        const form = document.querySelector('.contact-form');
+        const feedbackDiv = document.getElementById('form-feedback');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = {};
+            formData.forEach((value, key) => {
+                // For checkboxes, we want to collect all selected values
+                if (key === 'experience_type') {
+                    if (!object[key]) {
+                        object[key] = [];
+                    }
+                    object[key].push(value);
+                } else {
+                    object[key] = value;
+                }
+            });
+            const json = JSON.stringify(object);
+            feedbackDiv.innerHTML = "Enviando...";
+
+            fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let jsonResponse = await response.json();
+                    if (response.status == 200) {
+                        feedbackDiv.innerHTML = "¡Formulario enviado con éxito!";
+                    } else {
+                        console.log(response);
+                        feedbackDiv.innerHTML = jsonResponse.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    feedbackDiv.innerHTML = "Algo salió mal. Por favor, inténtalo de nuevo.";
+                })
+                .then(function() {
+                    form.reset();
+                    setTimeout(() => {
+                        feedbackDiv.innerHTML = '';
+                    }, 5000);
+                });
+        });
+    </script>
 
     <!-- Script para el menú móvil -->
     <script>
