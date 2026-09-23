@@ -1437,6 +1437,12 @@ p.reveal-text {
     margin-bottom: -2px;
 }
 
+.funding-logo-cultura {
+    height: 76px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+
 .text-content h1,
 .text-content p {
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
@@ -1554,6 +1560,9 @@ p.reveal-text {
   }
   .funding-logo-prtr {
     height: 56px;
+  }
+  .funding-logo-cultura {
+    height: 52px;
   }
   .image-wrapper img.mobile-top {
     object-position: top center;
